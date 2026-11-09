@@ -185,27 +185,8 @@ export default function StorePage() {
         </div>
       </section>
 
-      {/* NUVIX BANNER */}
-      <section className="store-section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="store-nuvix-banner">
-            <div className="store-nuvix-icon">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" />
-              </svg>
-            </div>
-            <div className="store-nuvix-body">
-              <div className="store-nuvix-title">NuvixMc.net</div>
-              <div className="store-nuvix-sub">
-                Der Minecraft SMP Server von Flux Network · Fabric 1.21.1 · In Entwicklung
-              </div>
-            </div>
-            <span className="store-nuvix-badge">Coming Soon</span>
-          </div>
-        </div>
-      </section>
 
-      <SiteFooter />
+<SiteFooter />
       <CookieNotice />
     </>
   );
