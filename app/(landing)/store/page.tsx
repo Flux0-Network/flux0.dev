@@ -41,7 +41,7 @@ const ITEMS: StoreItem[] = [
     platformUrl: 'https://modrinth.com/plugin/prismspawn',
     mcVersion: '1.21.1',
     loader: 'Fabric',
-    server: 'NuvixMc.net',
+    server: 'Lyxora',
     desc: 'Spawn-Management Plugin für Fabric-Server. Setzt und verwaltet Spawn-Punkte, Rückkehr-Mechaniken und bietet flexible Konfiguration für Admins.',
     version: 'v1.0',
     tags: ['Spawn', 'Utility', 'Admin'],
