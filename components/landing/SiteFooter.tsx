@@ -40,6 +40,7 @@ export default function SiteFooter() {
           <div className="footer-col">
             <div className="footer-col-title">Links</div>
             <ul className="footer-links">
+              <li><a href="/store">Store</a></li>
               <li><a href="/community">Community</a></li>
               <li><a href="/docs">Dokumentation</a></li>
               <li><a href="/dashboard">Dashboard</a></li>

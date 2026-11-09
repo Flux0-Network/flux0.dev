@@ -3631,3 +3631,139 @@ kbd {
 .cl-back-link:hover { color: var(--muted); }
 .cl-single-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .cl-single-title { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; margin: 0; }
+
+/* ── STORE PAGE ── */
+.store-hero { padding: 120px 0 56px; text-align: center; }
+.store-hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 18px; }
+.store-hero p { font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.65; }
+
+.store-section { padding: 48px 0 72px; }
+.store-section-label { display: flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: var(--dim); margin-bottom: 14px; }
+.store-section-title { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 900; letter-spacing: -0.03em; margin-bottom: 10px; }
+.store-section-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.65; margin-bottom: 36px; max-width: 540px; }
+
+.store-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+.store-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.store-card:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); }
+
+.store-card-top { display: flex; align-items: center; justify-content: space-between; }
+.store-card-badges { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid;
+}
+.store-badge--modrinth {
+  background: rgba(27,217,106,0.1);
+  border-color: rgba(27,217,106,0.3);
+  color: #1bd96a;
+}
+
+.store-card-body { display: flex; align-items: center; gap: 14px; }
+.store-item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(139,92,246,0.3) 0%, rgba(59,130,246,0.2) 100%);
+  border: 1px solid rgba(139,92,246,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255,255,255,0.8);
+}
+.store-card-name { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em; }
+.store-card-version { font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; color: var(--dim); margin-top: 2px; }
+
+.store-card-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.65; flex: 1; }
+
+.store-card-meta {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.store-meta-item { display: flex; flex-direction: column; gap: 2px; }
+.store-meta-label { font-size: 0.68rem; font-weight: 700; color: var(--dim); text-transform: uppercase; letter-spacing: 0.1em; }
+.store-meta-val { font-size: 0.84rem; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+
+.store-card-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+.store-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  background: rgba(27,217,106,0.1);
+  border: 1px solid rgba(27,217,106,0.3);
+  color: #1bd96a;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+  margin-top: auto;
+}
+.store-card-cta:hover { background: rgba(27,217,106,0.18); border-color: rgba(27,217,106,0.5); }
+
+/* Coming soon card */
+.store-card--soon {
+  border-style: dashed;
+  border-color: rgba(255,255,255,0.1);
+  background: transparent;
+  min-height: 260px;
+  justify-content: center;
+}
+.store-card--soon:hover { border-color: rgba(255,255,255,0.18); box-shadow: none; }
+.store-card-soon-inner { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.store-card-soon-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--dim); }
+.store-card-soon-text { font-size: 0.95rem; font-weight: 700; color: rgba(255,255,255,0.4); }
+.store-card-soon-sub { font-size: 0.78rem; color: var(--dim); max-width: 200px; line-height: 1.5; }
+
+/* NuvixMc banner */
+.store-nuvix-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.store-nuvix-icon { width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.store-nuvix-icon svg { width: 22px; height: 22px; fill: #fff; }
+.store-nuvix-body { flex: 1; min-width: 0; }
+.store-nuvix-title { font-size: 0.95rem; font-weight: 800; }
+.store-nuvix-sub { font-size: 0.78rem; color: var(--dim); margin-top: 2px; }
+.store-nuvix-badge { flex-shrink: 0; padding: 4px 12px; border-radius: 99px; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); color: #f59e0b; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .store-hero { padding: 90px 0 40px; }
+  .store-grid { grid-template-columns: 1fr; }
+  .store-nuvix-banner { flex-wrap: wrap; gap: 14px; }
+}

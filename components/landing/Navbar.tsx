@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface MeData {
@@ -14,7 +15,8 @@ const NAV_LINKS = [
   { href: '#produkte',                        label: 'Produkte'  },
   { href: '#roadmap',                         label: 'Roadmap'   },
   { href: '/docs',                            label: 'Docs'      },
-  { href: '/changelog', label: 'Updates' },
+  { href: '/store',                           label: 'Store'     },
+  { href: '/changelog',                       label: 'Updates'   },
   { href: 'https://discord.gg/D9GwqWpwHT',   label: 'Community', external: true },
 ];
 
