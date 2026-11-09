@@ -1,5 +1,20 @@
 export const UPDATES = [
   {
+    slug:    'flux0-dev-nov-2026',
+    date:    'Nov 2026',
+    product: 'Flux Network',
+    version: 'v1.1.0',
+    tagCls:  'cl-tag--flux',
+    title:   'Store',
+    tagline: 'Plugins. Direkt auf flux0.dev.',
+    descDe:  'Neue /store Seite für Plugins und Mods von Flux Network. PrismSpawn ist das erste Plugin, verfügbar auf Modrinth für Fabric 1.21.1.',
+    changes: [
+      '/store Seite mit Plugin- und Mod-Karten',
+      'PrismSpawn Plugin für Lyxora (Fabric 1.21.1) auf Modrinth',
+      'Store-Link in Navbar und Footer',
+    ],
+  },
+  {
     slug:    'flux0-dev-okt-2026',
     date:    'Okt 2026',
     product: 'Flux Network',
