@@ -15,12 +15,14 @@ const NAV_LINKS_DE = [
   { href: '#produkte',                        label: 'Produkte'  },
   { href: '#roadmap',                         label: 'Roadmap'   },
   { href: '/docs',                            label: 'Docs'      },
+  { href: '/store',                           label: 'Store'     },
   { href: 'https://discord.gg/D9GwqWpwHT',   label: 'Community', external: true },
 ];
 const NAV_LINKS_EN = [
   { href: '#produkte',                        label: 'Products'  },
   { href: '#roadmap',                         label: 'Roadmap'   },
   { href: '/docs',                            label: 'Docs'      },
+  { href: '/store',                           label: 'Store'     },
   { href: 'https://discord.gg/D9GwqWpwHT',   label: 'Community', external: true },
 ];
 
