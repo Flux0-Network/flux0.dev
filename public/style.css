@@ -3767,3 +3767,27 @@ kbd {
   .store-grid { grid-template-columns: 1fr; }
   .store-nuvix-banner { flex-wrap: wrap; gap: 14px; }
 }
+
+/* Store: coming soon badge & upcoming card state */
+.store-badge--soon {
+  background: rgba(245,158,11,0.1);
+  border-color: rgba(245,158,11,0.3);
+  color: #f59e0b;
+}
+.store-card--upcoming { opacity: 0.72; }
+.store-card--upcoming:hover { opacity: 0.9; }
+.store-card-cta--disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--dim);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: default;
+  margin-top: auto;
+}

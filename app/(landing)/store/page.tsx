@@ -23,13 +23,14 @@ interface StoreItem {
   name: string;
   category: Category;
   platform: Platform;
-  platformUrl: string;
+  platformUrl?: string;
   mcVersion: string;
   loader: string;
   server?: string;
   desc: string;
   version: string;
   tags: string[];
+  comingSoon?: boolean;
 }
 
 const ITEMS: StoreItem[] = [
@@ -45,6 +46,71 @@ const ITEMS: StoreItem[] = [
     desc: 'Lobby-Management Plugin für Fabric-Server. Verwaltet Lobby-Bereiche, Spieler-Routing und bietet eine flexible Konfiguration für Server-Admins.',
     version: 'v1.0',
     tags: ['Lobby', 'Utility', 'Admin'],
+  },
+  {
+    slug: 'prismquests',
+    name: 'PrismQuests',
+    category: 'Plugin',
+    platform: 'modrinth',
+    mcVersion: '1.21.1',
+    loader: 'Fabric',
+    server: 'Lyxora',
+    desc: 'Quest-System Plugin für Fabric-Server. Erstelle und verwalte Quests, Belohnungen und Fortschritte für deine Spieler.',
+    version: 'v1.0',
+    tags: ['Quests', 'Progression'],
+    comingSoon: true,
+  },
+  {
+    slug: 'prismeconomy',
+    name: 'PrismEconomy',
+    category: 'Plugin',
+    platform: 'modrinth',
+    mcVersion: '1.21.1',
+    loader: 'Fabric',
+    server: 'Lyxora',
+    desc: 'Wirtschaftssystem für Fabric-Server. Währung, Shops, Transaktionen und eine vollständige Economy-API für andere Plugins.',
+    version: 'v1.0',
+    tags: ['Economy', 'Money', 'Shop'],
+    comingSoon: true,
+  },
+  {
+    slug: 'prismteam',
+    name: 'PrismTeam',
+    category: 'Plugin',
+    platform: 'modrinth',
+    mcVersion: '1.21.1',
+    loader: 'Fabric',
+    server: 'Lyxora',
+    desc: 'Team-Management Plugin für Fabric-Server. Spieler können Teams gründen, Mitglieder einladen und gemeinsam Ziele verfolgen.',
+    version: 'v1.0',
+    tags: ['Teams', 'Social'],
+    comingSoon: true,
+  },
+  {
+    slug: 'prismboard',
+    name: 'PrismBoard',
+    category: 'Plugin',
+    platform: 'modrinth',
+    mcVersion: '1.21.1',
+    loader: 'Fabric',
+    server: 'Lyxora',
+    desc: 'Scoreboard & Leaderboard Plugin für Fabric-Server. Zeigt Statistiken, Rankings und Live-Daten direkt im Scoreboard an.',
+    version: 'v1.0',
+    tags: ['Scoreboard', 'Stats'],
+    comingSoon: true,
+  },
+  {
+    slug: 'prismpets',
+    name: 'PrismPets',
+    category: 'Plugin',
+    platform: 'modrinth',
+    mcVersion: '1.21.1',
+    loader: 'Fabric',
+    server: 'Lyxora',
+    desc: 'Haustier-System für Fabric-Server. Spieler können Haustiere sammeln, leveln und anpassen.',
+    version: 'v1.0',
+    tags: ['Pets', 'Cosmetics'],
+    comingSoon: true,
   },
 ];
 
@@ -106,7 +172,7 @@ export default function StorePage() {
             {ITEMS.filter(i => i.category === 'Plugin').map(item => {
               const cat = CATEGORY_COLORS[item.category];
               return (
-                <div key={item.slug} className="store-card">
+                <div key={item.slug} className={`store-card${item.comingSoon ? ' store-card--upcoming' : ''}`}>
                   <div className="store-card-top">
                     <div className="store-card-badges">
                       <span
@@ -119,6 +185,9 @@ export default function StorePage() {
                         {MODRINTH_ICON}
                         Modrinth
                       </span>
+                      {item.comingSoon && (
+                        <span className="store-badge store-badge--soon">Bald</span>
+                      )}
                     </div>
                   </div>
 
@@ -154,33 +223,26 @@ export default function StorePage() {
                     ))}
                   </div>
 
-                  <a
-                    href={item.platformUrl}
-                    className="store-card-cta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>Auf Modrinth ansehen</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M7 17L17 7M17 7H7M17 7v10"/>
-                    </svg>
-                  </a>
+                  {item.comingSoon ? (
+                    <div className="store-card-cta store-card-cta--disabled">
+                      <span>In Entwicklung</span>
+                    </div>
+                  ) : (
+                    <a
+                      href={item.platformUrl}
+                      className="store-card-cta"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>Auf Modrinth ansehen</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                      </svg>
+                    </a>
+                  )}
                 </div>
               );
             })}
-
-            {/* Placeholder — coming soon */}
-            <div className="store-card store-card--soon">
-              <div className="store-card-soon-inner">
-                <div className="store-card-soon-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                  </svg>
-                </div>
-                <span className="store-card-soon-text">Mehr kommt bald</span>
-                <span className="store-card-soon-sub">Weitere Plugins &amp; Mods in Entwicklung.</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
