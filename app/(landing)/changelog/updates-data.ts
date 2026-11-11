@@ -1,5 +1,22 @@
 export const UPDATES = [
   {
+    slug:    'prism-suite-nov-2026',
+    date:    'Nov 2026',
+    product: 'Flux Network',
+    version: 'v1.2.0',
+    tagCls:  'cl-tag--flux',
+    title:   'Prism Suite',
+    tagline: '5 Plugins. Bald verfügbar.',
+    descDe:  'Fünf neue Prism-Plugins für PaperMC wurden angekündigt. PrismQuests, PrismEconomy, PrismTeam, PrismBoard und PrismPets sind in aktiver Entwicklung und erscheinen auf Modrinth.',
+    changes: [
+      'PrismQuests: Quest-System mit Belohnungen',
+      'PrismEconomy: Währung, Shops und Economy-API',
+      'PrismTeam: Teams gründen und gemeinsam spielen',
+      'PrismBoard: Scoreboard & Leaderboard System',
+      'PrismPets: Haustiere sammeln und leveln',
+    ],
+  },
+  {
     slug:    'flux0-dev-nov-2026',
     date:    'Nov 2026',
     product: 'Flux Network',
