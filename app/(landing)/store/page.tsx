@@ -34,19 +34,6 @@ interface StoreItem {
 
 const ITEMS: StoreItem[] = [
   {
-    slug: 'prismspawn',
-    name: 'PrismSpawn',
-    category: 'Plugin',
-    platform: 'modrinth',
-    platformUrl: 'https://modrinth.com/plugin/prismspawn',
-    mcVersion: '1.21.1',
-    loader: 'Fabric',
-    server: 'Lyxora',
-    desc: 'Spawn-Management Plugin für Fabric-Server. Setzt und verwaltet Spawn-Punkte, Rückkehr-Mechaniken und bietet flexible Konfiguration für Admins.',
-    version: 'v1.0',
-    tags: ['Spawn', 'Utility', 'Admin'],
-  },
-  {
     slug: 'prismlobby',
     name: 'PrismLobby',
     category: 'Plugin',

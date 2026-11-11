@@ -10,7 +10,7 @@ export const UPDATES = [
     descDe:  'Neue /store Seite für Plugins und Mods von Flux Network. PrismSpawn ist das erste Plugin, verfügbar auf Modrinth für Fabric 1.21.1.',
     changes: [
       '/store Seite mit Plugin- und Mod-Karten',
-      'PrismSpawn Plugin für Lyxora (Fabric 1.21.1) auf Modrinth',
+      'PrismLobby Plugin für Lyxora (Fabric 1.21.1) auf Modrinth',
       'Store-Link in Navbar und Footer',
     ],
   },
