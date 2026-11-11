@@ -46,6 +46,19 @@ const ITEMS: StoreItem[] = [
     version: 'v1.0',
     tags: ['Spawn', 'Utility', 'Admin'],
   },
+  {
+    slug: 'prismlobby',
+    name: 'PrismLobby',
+    category: 'Plugin',
+    platform: 'modrinth',
+    platformUrl: 'https://modrinth.com/plugin/prismlobby',
+    mcVersion: '1.21.1',
+    loader: 'Fabric',
+    server: 'Lyxora',
+    desc: 'Lobby-Management Plugin für Fabric-Server. Verwaltet Lobby-Bereiche, Spieler-Routing und bietet eine flexible Konfiguration für Server-Admins.',
+    version: 'v1.0',
+    tags: ['Lobby', 'Utility', 'Admin'],
+  },
 ];
 
 const MODRINTH_ICON = (
