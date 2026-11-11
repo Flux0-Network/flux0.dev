@@ -12,6 +12,7 @@ export const UPDATES = [
       '/store Seite mit Plugin- und Mod-Karten',
       'PrismLobby Plugin für Lyxora (Paper 1.21.1) auf Modrinth',
       'Store-Link in Navbar und Footer',
+      'PrismQuests, PrismEconomy, PrismTeam, PrismBoard, PrismPets als Coming Soon angekündigt',
     ],
   },
   {
