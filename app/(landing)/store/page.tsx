@@ -147,10 +147,6 @@ export default function StorePage() {
             <span className="dot dot--grün" />
             STORE
           </div>
-          <h1>
-            Plugins &amp; Mods<br />
-            <span style={{ color: 'var(--accent)' }}>von Flux Network.</span>
-          </h1>
           <p>Kostenlose Plugins und Mods für Minecraft, verfügbar auf Modrinth.</p>
         </div>
       </div>
