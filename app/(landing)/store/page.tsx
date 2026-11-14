@@ -147,7 +147,6 @@ export default function StorePage() {
             <span className="dot dot--grün" />
             STORE
           </div>
-          <p>Kostenlose Plugins und Mods für Minecraft, verfügbar auf Modrinth.</p>
         </div>
       </div>
 
