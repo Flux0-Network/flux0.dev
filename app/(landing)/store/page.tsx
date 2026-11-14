@@ -155,8 +155,84 @@ export default function StorePage() {
         </div>
       </div>
 
-      {/* ITEMS */}
+      {/* WEB SERVICES */}
       <section className="store-section">
+        <div className="container">
+          <div className="store-section-label">
+            <span className="dot dot--blau" />
+            WEBSEITEN
+          </div>
+          <h2 className="store-section-title">Wir bauen deine Webseite.</h2>
+          <p className="store-section-sub">
+            Professionelle Webseiten — gebaut, gepflegt und rechtlich auf dem neuesten Stand gehalten.
+          </p>
+
+          <div className="ws-grid">
+            <div className="ws-card">
+              <div className="ws-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                </svg>
+              </div>
+              <h3 className="ws-card-title">Webseiten-Entwicklung</h3>
+              <p className="ws-card-desc">
+                Moderne, schnelle Webseiten mit Next.js — individuell gestaltet, mobiloptimiert und SEO-ready. Von der Landing Page bis zum kompletten Auftritt.
+              </p>
+              <ul className="ws-card-list">
+                <li>Design & Umsetzung nach deinen Wünschen</li>
+                <li>Mobiloptimiert & schnell</li>
+                <li>Domain, Hosting & Deployment</li>
+                <li>Impressum & Datenschutzerklärung</li>
+              </ul>
+            </div>
+
+            <div className="ws-card">
+              <div className="ws-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                </svg>
+              </div>
+              <h3 className="ws-card-title">Wartung & Pflege</h3>
+              <p className="ws-card-desc">
+                Wir halten deine Webseite aktuell — Inhalte anpassen, rechtliche Änderungen einpflegen und technische Updates durchführen.
+              </p>
+              <ul className="ws-card-list">
+                <li>Regelmäßige Inhaltsaktualisierungen</li>
+                <li>Impressum & Datenschutz aktuell halten</li>
+                <li>Technische Updates & Bugfixes</li>
+                <li>Ansprechpartner bei Fragen</li>
+              </ul>
+            </div>
+
+            <div className="ws-card ws-card--cta">
+              <div className="ws-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h3 className="ws-card-title">Interesse?</h3>
+              <p className="ws-card-desc">
+                Schreib uns auf Discord oder per E-Mail — wir besprechen dein Projekt und machen dir ein Angebot.
+              </p>
+              <a
+                href="https://discord.gg/D9GwqWpwHT"
+                className="store-card-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginTop: 'auto' }}
+              >
+                <span>Discord schreiben</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ITEMS */}
+      <section className="store-section" style={{ paddingTop: 0 }}>
         <div className="container">
 
           <div className="store-section-label">
@@ -243,82 +319,6 @@ export default function StorePage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* WEB SERVICES */}
-      <section className="store-section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="store-section-label">
-            <span className="dot dot--blau" />
-            WEBSEITEN
-          </div>
-          <h2 className="store-section-title">Wir bauen deine Webseite.</h2>
-          <p className="store-section-sub">
-            Professionelle Webseiten — gebaut, gepflegt und rechtlich auf dem neuesten Stand gehalten.
-          </p>
-
-          <div className="ws-grid">
-            <div className="ws-card">
-              <div className="ws-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-                </svg>
-              </div>
-              <h3 className="ws-card-title">Webseiten-Entwicklung</h3>
-              <p className="ws-card-desc">
-                Moderne, schnelle Webseiten mit Next.js — individuell gestaltet, mobiloptimiert und SEO-ready. Von der Landing Page bis zum kompletten Auftritt.
-              </p>
-              <ul className="ws-card-list">
-                <li>Design & Umsetzung nach deinen Wünschen</li>
-                <li>Mobiloptimiert & schnell</li>
-                <li>Domain, Hosting & Deployment</li>
-                <li>Impressum & Datenschutzerklärung</li>
-              </ul>
-            </div>
-
-            <div className="ws-card">
-              <div className="ws-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                </svg>
-              </div>
-              <h3 className="ws-card-title">Wartung & Pflege</h3>
-              <p className="ws-card-desc">
-                Wir halten deine Webseite aktuell — Inhalte anpassen, rechtliche Änderungen einpflegen und technische Updates durchführen.
-              </p>
-              <ul className="ws-card-list">
-                <li>Regelmäßige Inhaltsaktualisierungen</li>
-                <li>Impressum & Datenschutz aktuell halten</li>
-                <li>Technische Updates & Bugfixes</li>
-                <li>Ansprechpartner bei Fragen</li>
-              </ul>
-            </div>
-
-            <div className="ws-card ws-card--cta">
-              <div className="ws-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-              </div>
-              <h3 className="ws-card-title">Interesse?</h3>
-              <p className="ws-card-desc">
-                Schreib uns auf Discord oder per E-Mail — wir besprechen dein Projekt und machen dir ein Angebot.
-              </p>
-              <a
-                href="https://discord.gg/D9GwqWpwHT"
-                className="store-card-cta"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ marginTop: 'auto' }}
-              >
-                <span>Discord schreiben</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M7 17L17 7M17 7H7M17 7v10"/>
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
       </section>
