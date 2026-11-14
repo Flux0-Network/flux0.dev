@@ -3791,3 +3791,59 @@ kbd {
   cursor: default;
   margin-top: auto;
 }
+
+/* ── STORE: WEB SERVICES ── */
+.ws-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+.ws-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ws-card:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); }
+.ws-card--cta { border-color: rgba(255,255,255,0.12); }
+
+.ws-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  flex-shrink: 0;
+}
+.ws-card-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; }
+.ws-card-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+.ws-card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+.ws-card-list li {
+  font-size: 0.82rem;
+  color: var(--dim);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+.ws-card-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+@media (max-width: 600px) { .ws-grid { grid-template-columns: 1fr; } }
