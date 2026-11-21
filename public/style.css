@@ -1449,17 +1449,23 @@ body::after {
 }
 .docs-header-discord:hover { border-color: var(--border-md); color: var(--text); }
 
-/* Mobile toggle */
+/* Floating nav button — hidden on desktop, visible on mobile */
 .docs-mobile-toggle {
-  display: none; align-items: center; gap: 7px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 8px; padding: 6px 12px;
-  font-size: 0.82rem; font-weight: 600; color: var(--muted);
-  cursor: pointer; white-space: nowrap;
-  transition: border-color 0.15s, color 0.15s;
-  font-family: inherit; flex-shrink: 0; margin-left: 8px;
+  display: none;
+  position: fixed; bottom: 28px; right: 20px; z-index: 130;
+  width: 52px; height: 52px;
+  align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: var(--text); cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: background 0.15s, transform 0.15s;
+  font-family: inherit;
 }
-.docs-mobile-toggle:hover { border-color: var(--border-md); color: var(--text); }
+.docs-mobile-toggle:hover { background: rgba(255,255,255,0.15); transform: scale(1.05); }
+.docs-mobile-toggle:active { transform: scale(0.96); }
 
 /* Overlay */
 .docs-overlay {
@@ -3227,7 +3233,7 @@ body::after {
   }
   .docs-main { margin-left: 0; }
   .docs-content { padding: 36px 28px 72px; }
-  .docs-mobile-toggle { display: inline-flex; }
+  .docs-mobile-toggle { display: flex; }
   .docs-sidebar-close { display: block; }
   .docs-cards-row { grid-template-columns: repeat(2,1fr); }
 
@@ -3383,7 +3389,6 @@ body::after {
   .hero h1 { font-size: clamp(1.65rem, 7vw, 2.2rem); }
   .hero-label { font-size: 0.6rem; }
   .product-icon { width: 40px; height: 40px; font-size: 1rem; }
-  .docs-mobile-toggle span { display: none; }
   .docs-header-back { display: none; }
 }
 
