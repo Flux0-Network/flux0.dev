@@ -4,17 +4,17 @@ import DocsNav from '@/components/landing/DocsNav';
 import CookieNotice from '@/components/landing/CookieNotice';
 
 export const metadata: Metadata = {
-  title: 'Docs, Flux0',
-  description: 'Dokumentation für LumaSpace und FlowWave, Guides, APIs und Integration.',
+  title: 'Docs · Flux Network',
+  description: 'Dokumentation für PrismLobby, LumaSpace, FlowWave und weitere Produkte von Flux Network.',
   openGraph: {
     type: 'website',
     url: 'https://flux0.dev/docs',
-    title: 'Docs, Flux0',
-    description: 'Dokumentation für LumaSpace und FlowWave, Guides, APIs und Integration.',
+    title: 'Docs · Flux Network',
+    description: 'Dokumentation für PrismLobby, LumaSpace, FlowWave und weitere Produkte von Flux Network.',
     images: [{ url: 'https://flux0.dev/og-image.png' }],
     siteName: 'Flux0',
   },
-  twitter: { card: 'summary_large_image', title: 'Docs, Flux0', images: ['https://flux0.dev/og-image.png'] },
+  twitter: { card: 'summary_large_image', title: 'Docs · Flux Network', images: ['https://flux0.dev/og-image.png'] },
   alternates: { canonical: 'https://flux0.dev/docs' },
 };
 
@@ -67,6 +67,15 @@ export default function DocsPage() {
             </div>
 
             <div className="docs-nav-group">
+              <div className="docs-nav-product-badge docs-nav-product-badge--prism">◈ PrismLobby</div>
+              <a href="#prismlobby-intro" className="docs-nav-link">Übersicht</a>
+              <a href="#prismlobby-install" className="docs-nav-link">Installation</a>
+              <a href="#prismlobby-config" className="docs-nav-link">Konfiguration</a>
+              <a href="#prismlobby-commands" className="docs-nav-link">Commands</a>
+              <a href="#prismlobby-placeholders" className="docs-nav-link">Platzhalter</a>
+            </div>
+
+            <div className="docs-nav-group">
               <div className="docs-nav-product-badge docs-nav-product-badge--luma">✦ LumaSpace</div>
               <a href="#lumaspace-intro" className="docs-nav-link">Übersicht</a>
               <a href="#lumaspace-start" className="docs-nav-link">Quickstart</a>
@@ -110,6 +119,13 @@ export default function DocsPage() {
               </p>
 
               <div className="docs-cards-row">
+                <a href="#prismlobby-intro" className="docs-quick-card">
+                  <span className="docs-quick-icon" style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa', fontSize: '1.1rem' }}>◈</span>
+                  <div>
+                    <strong>PrismLobby</strong>
+                    <p>Minecraft Lobby Plugin · Paper</p>
+                  </div>
+                </a>
                 <a href="#flowwave-builder" className="docs-quick-card">
                   <span className="docs-quick-icon docs-quick-icon--logo">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -140,16 +156,6 @@ export default function DocsPage() {
                     <p>Open Source Component Framework</p>
                   </div>
                 </a>
-                <a href="#vylder-intro" className="docs-quick-card">
-                  <span className="docs-quick-icon docs-quick-icon--logo">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/vylder-icon.png" alt="Vylder" className="product-logo-icon" />
-                  </span>
-                  <div>
-                    <strong>Vylder</strong>
-                    <p>Visueller Website-Builder</p>
-                  </div>
-                </a>
               </div>
             </section>
 
@@ -157,7 +163,182 @@ export default function DocsPage() {
               <h2 className="docs-h2">Erste Schritte</h2>
               <p>Wähle ein Produkt aus dem Menü links oder klick direkt auf eine der Karten oben. Alle Produkte sind eigenständig, du kannst mit jedem beginnen, das dich interessiert.</p>
               <div className="docs-callout docs-callout--info">
-                <strong>Hinweis:</strong> LumaSpace und FlowWave sind live. Die Dokumentation wird laufend aktualisiert.
+                <strong>Hinweis:</strong> PrismLobby ist live auf Modrinth verfügbar. LumaSpace und FlowWave sind ebenfalls aktiv. Die Dokumentation wird laufend aktualisiert.
+              </div>
+            </section>
+
+            <div className="docs-divider" />
+
+            {/* ─── PRISMLOBBY ─── */}
+            <div className="docs-product-header docs-product-header--prism" id="prismlobby-intro">
+              <span className="docs-product-icon" style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, borderRadius: 12, flexShrink: 0 }}>◈</span>
+              <div>
+                <h2 className="docs-h1" style={{ margin: 0 }}>PrismLobby</h2>
+                <span className="docs-product-tag docs-product-tag--live">Live · Paper 1.21.1</span>
+              </div>
+            </div>
+
+            <section className="docs-section">
+              <p className="docs-lead">
+                PrismLobby ist ein <strong>Lobby-Management Plugin für PaperMC-Server</strong>. Es verwaltet Spawn-Punkte, Spieler-Routing und bietet eine flexible Konfiguration für Server-Admins — kostenlos auf Modrinth verfügbar.
+              </p>
+              <div className="docs-feature-list">
+                <div className="docs-feature-item"><span className="docs-feature-icon">🏠</span><div><strong>Spawn-Verwaltung</strong>, Setze und verwalte mehrere Spawn-Punkte per Command</div></div>
+                <div className="docs-feature-item"><span className="docs-feature-icon">⚙️</span><div><strong>Flexible Konfiguration</strong>, Alles in einer übersichtlichen <code className="inline-code">config.yml</code></div></div>
+                <div className="docs-feature-item"><span className="docs-feature-icon">📊</span><div><strong>PlaceholderAPI</strong>, Platzhalter für Scoreboards, Tab-Liste und Chat</div></div>
+              </div>
+            </section>
+
+            <section className="docs-section" id="prismlobby-install">
+              <h2 className="docs-h2">Installation</h2>
+              <p>PrismLobby benötigt einen PaperMC-Server mit Minecraft 1.21.1.</p>
+              <div className="docs-step">
+                <span className="docs-step-num">1</span>
+                <div>
+                  <strong>Plugin herunterladen</strong>
+                  <p>Lade die aktuelle Version von <a href="https://modrinth.com/plugin/prismlobby" target="_blank" rel="noopener" className="docs-link">modrinth.com/plugin/prismlobby</a> herunter.</p>
+                </div>
+              </div>
+              <div className="docs-step">
+                <span className="docs-step-num">2</span>
+                <div>
+                  <strong>In den plugins-Ordner legen</strong>
+                  <p>Kopiere die <code className="inline-code">.jar</code>-Datei in den <code className="inline-code">/plugins/</code>-Ordner deines Servers.</p>
+                </div>
+              </div>
+              <div className="docs-step">
+                <span className="docs-step-num">3</span>
+                <div>
+                  <strong>Server neu starten</strong>
+                  <p>Starte den Server neu. PrismLobby erstellt automatisch die <code className="inline-code">config.yml</code> im Ordner <code className="inline-code">/plugins/PrismLobby/</code>.</p>
+                </div>
+              </div>
+              <div className="docs-callout docs-callout--info">
+                <strong>Voraussetzung:</strong> PaperMC 1.21.1 oder neuer. Spigot und CraftBukkit werden nicht unterstützt.
+              </div>
+            </section>
+
+            <section className="docs-section" id="prismlobby-config">
+              <h2 className="docs-h2">Konfiguration</h2>
+              <p>Die <code className="inline-code">config.yml</code> befindet sich unter <code className="inline-code">/plugins/PrismLobby/config.yml</code>.</p>
+              <pre className="docs-code"><code>{`# PrismLobby config.yml
+
+spawn:
+  world: world          # Welt des Spawn-Punktes
+  x: 0.5
+  y: 64.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+settings:
+  teleport-on-join: true       # Spieler beim Joinen zum Spawn teleportieren
+  teleport-on-respawn: true    # Spieler nach dem Tod zum Spawn teleportieren
+  disable-hunger: true         # Hunger im Lobby deaktivieren
+  disable-pvp: true            # PvP im Lobby deaktivieren
+  fly-enabled: false           # Fliegen für alle erlauben
+
+messages:
+  prefix: "&8[&5Prism&8] "
+  spawn-set: "&aSpawn wurde gesetzt."
+  no-permission: "&cDu hast keine Berechtigung."`}</code></pre>
+              <p>Nach Änderungen an der Konfiguration mit <code className="inline-code">/prismlobby reload</code> neu laden — kein Serverneustart nötig.</p>
+            </section>
+
+            <section className="docs-section" id="prismlobby-commands">
+              <h2 className="docs-h2">Commands</h2>
+              <div className="docs-table-wrap">
+                <table className="docs-table">
+                  <thead>
+                    <tr>
+                      <th>Command</th>
+                      <th>Berechtigung</th>
+                      <th>Beschreibung</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code className="inline-code">/lobby</code></td>
+                      <td>—</td>
+                      <td>Teleportiert dich zum Spawn-Punkt</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">/setspawn</code></td>
+                      <td><code className="inline-code">prismlobby.admin</code></td>
+                      <td>Setzt den Spawn auf deine aktuelle Position</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">/prismlobby reload</code></td>
+                      <td><code className="inline-code">prismlobby.admin</code></td>
+                      <td>Lädt die Konfiguration neu</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">/prismlobby version</code></td>
+                      <td>—</td>
+                      <td>Zeigt die installierte Version an</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="docs-callout docs-callout--warn">
+                Die Berechtigung <code className="inline-code">prismlobby.admin</code> wird standardmäßig nur Operatoren (OP) gegeben. Nutze ein Permission-Plugin wie LuckPerms für feingranulare Kontrolle.
+              </div>
+            </section>
+
+            <section className="docs-section" id="prismlobby-placeholders">
+              <h2 className="docs-h2">Platzhalter</h2>
+              <p>PrismLobby unterstützt <strong>PlaceholderAPI</strong>. Installiere PlaceholderAPI auf deinem Server, um die folgenden Platzhalter in Scoreboards, der Tab-Liste, im Chat und in anderen Plugins nutzen zu können.</p>
+              <div className="docs-table-wrap">
+                <table className="docs-table">
+                  <thead>
+                    <tr>
+                      <th>Platzhalter</th>
+                      <th>Rückgabe</th>
+                      <th>Beschreibung</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code className="inline-code">%prismlobby_world%</code></td>
+                      <td>Text</td>
+                      <td>Welt, in der der Spieler sich befindet</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">%prismlobby_online%</code></td>
+                      <td>Zahl</td>
+                      <td>Anzahl der aktuell eingeloggten Spieler</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">%prismlobby_max_players%</code></td>
+                      <td>Zahl</td>
+                      <td>Maximale Spieleranzahl des Servers</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">%prismlobby_tps%</code></td>
+                      <td>Dezimalzahl</td>
+                      <td>Aktuelle Server-TPS (Ticks per Second)</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">%prismlobby_spawn_world%</code></td>
+                      <td>Text</td>
+                      <td>Welt des gesetzten Spawn-Punktes</td>
+                    </tr>
+                    <tr>
+                      <td><code className="inline-code">%prismlobby_version%</code></td>
+                      <td>Text</td>
+                      <td>Installierte Plugin-Version</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h3 className="docs-h3">Beispiel — Scoreboard</h3>
+              <pre className="docs-code"><code>{`# Beispiel mit einem Scoreboard-Plugin (z.B. FastBoard)
+lines:
+  - "&7Spieler online: &f%prismlobby_online%"
+  - "&7Server-TPS: &a%prismlobby_tps%"
+  - "&7Welt: &f%prismlobby_world%"`}</code></pre>
+              <div className="docs-callout docs-callout--info">
+                PlaceholderAPI muss separat installiert sein. Download: <a href="https://www.spigotmc.org/resources/placeholderapi.6245/" target="_blank" rel="noopener" className="docs-link">SpigotMC · PlaceholderAPI</a>
               </div>
             </section>
 
