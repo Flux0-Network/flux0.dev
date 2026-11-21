@@ -1410,11 +1410,14 @@ body::after {
 /* Header */
 .docs-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(7,7,10,0.9);
+  background: rgba(7,7,10,0.95);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border);
   height: 56px;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  will-change: transform;
 }
 .docs-header-inner {
   max-width: 1400px; margin: 0 auto; padding: 0 24px;
