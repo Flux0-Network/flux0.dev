@@ -269,23 +269,43 @@ export default function Navbar() {
             animation: 'navMenuIn 0.15s ease',
           }}>
             {NAV_LINKS.map(link => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}
-                style={{
-                  textDecoration: 'none',
-                  color: 'rgba(255,255,255,0.65)',
-                  fontSize: '0.9rem',
-                  fontWeight: 500,
-                  padding: '10px 14px',
-                  borderRadius: '10px',
-                  transition: 'color 0.15s, background 0.15s',
-                }}
-              >
-                {link.label}
-              </a>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener"
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'rgba(255,255,255,0.65)',
+                    fontSize: '0.9rem',
+                    fontWeight: 500,
+                    padding: '10px 14px',
+                    borderRadius: '10px',
+                    transition: 'color 0.15s, background 0.15s',
+                  }}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'rgba(255,255,255,0.65)',
+                    fontSize: '0.9rem',
+                    fontWeight: 500,
+                    padding: '10px 14px',
+                    borderRadius: '10px',
+                    transition: 'color 0.15s, background 0.15s',
+                  }}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
 
             {user ? (
