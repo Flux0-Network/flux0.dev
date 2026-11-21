@@ -1491,16 +1491,6 @@ body::after {
 }
 .docs-sidebar-inner { padding: 20px 14px 80px; }
 
-.docs-sidebar-brand {
-  display: none; align-items: center; gap: 10px;
-  padding: 4px 10px 20px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 16px;
-}
-.docs-sidebar-brand-label {
-  font-size: 0.85rem; font-weight: 600;
-  color: var(--text); letter-spacing: -0.01em;
-}
 
 .docs-sidebar-close {
   display: none; width: 100%; text-align: left;
@@ -3261,7 +3251,6 @@ body::after {
   .docs-content { padding: 36px 28px 72px; }
   .docs-mobile-toggle { display: flex; }
   .docs-sidebar-close { display: block; }
-  .docs-sidebar-brand { display: flex; }
   .docs-cards-row { grid-template-columns: repeat(2,1fr); }
 
   /* stats */

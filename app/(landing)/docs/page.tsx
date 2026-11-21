@@ -62,11 +62,6 @@ export default function DocsPage() {
         {/* ── SIDEBAR ── */}
         <aside className="docs-sidebar">
           <div className="docs-sidebar-inner">
-            <div className="docs-sidebar-brand">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Flux0" height={22} />
-              <span className="docs-sidebar-brand-label">flux0.dev</span>
-            </div>
             <button className="docs-sidebar-close" aria-label="Navigation schließen">← Schließen</button>
 
             <div className="docs-nav-group">
