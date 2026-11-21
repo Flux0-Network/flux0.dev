@@ -11,10 +11,8 @@ export const metadata: Metadata = {
     url: 'https://flux0.dev/docs',
     title: 'Docs · Flux Network',
     description: 'Dokumentation für PrismLobby, LumaSpace, FlowWave und weitere Produkte von Flux Network.',
-    images: [{ url: 'https://flux0.dev/og-image.png' }],
     siteName: 'Flux0',
   },
-  twitter: { card: 'summary_large_image', title: 'Docs · Flux Network', images: ['https://flux0.dev/og-image.png'] },
   alternates: { canonical: 'https://flux0.dev/docs' },
 };
 
@@ -23,29 +21,34 @@ export default function DocsPage() {
     <div className="docs-body">
       <DocsNav />
 
-      {/* HEADER */}
+      {/* ── HEADER ── */}
       <header className="docs-header">
         <div className="docs-header-inner">
           <Link href="/" className="docs-logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Flux0" className="logo-img" style={{ height: '26px' }} />
-            <span className="docs-logo-text">
-              <span style={{ color: 'var(--accent)' }} /> <span className="docs-logo-sep">/</span> Docs
-            </span>
+            <img src="/logo.png" alt="Flux0" height={24} />
+            <span className="docs-logo-sep">/</span>
+            <span className="docs-logo-label">Docs</span>
           </Link>
-          <div className="docs-header-search">
-            <div className="docs-search-box">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <span>Suchen…</span>
-              <kbd>⌘K</kbd>
-            </div>
-          </div>
-          <nav className="docs-header-nav">
-            <Link href="/" className="docs-header-link">← flux0.dev</Link>
-            <a href="https://discord.gg/yqQutP6EKV" className="btn-primary" target="_blank" rel="noopener" style={{ fontSize: '0.8rem', padding: '6px 14px' }}>Discord</a>
+
+          <div className="docs-header-spacer" />
+
+          <nav className="docs-header-actions">
+            <Link href="/" className="docs-header-back">← flux0.dev</Link>
+            <a
+              href="https://discord.gg/yqQutP6EKV"
+              className="docs-header-discord"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Discord
+            </a>
           </nav>
+
           <button className="docs-mobile-toggle" aria-label="Navigation öffnen">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="15" y2="18"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="15" y2="18" />
+            </svg>
             <span>Sections</span>
           </button>
         </div>
@@ -55,10 +58,10 @@ export default function DocsPage() {
 
       <div className="docs-layout">
 
-        {/* SIDEBAR */}
+        {/* ── SIDEBAR ── */}
         <aside className="docs-sidebar">
           <div className="docs-sidebar-inner">
-            <button className="docs-sidebar-close" aria-label="Navigation schließen">✕ Schließen</button>
+            <button className="docs-sidebar-close" aria-label="Navigation schließen">← Schließen</button>
 
             <div className="docs-nav-group">
               <span className="docs-nav-group-label">Übersicht</span>
@@ -67,7 +70,7 @@ export default function DocsPage() {
             </div>
 
             <div className="docs-nav-group">
-              <div className="docs-nav-product-badge docs-nav-product-badge--prism">◈ PrismLobby</div>
+              <span className="docs-nav-group-label docs-nav-group-label--prism">◈ PrismLobby</span>
               <a href="#prismlobby-intro" className="docs-nav-link">Übersicht</a>
               <a href="#prismlobby-install" className="docs-nav-link">Installation</a>
               <a href="#prismlobby-config" className="docs-nav-link">Konfiguration</a>
@@ -76,7 +79,7 @@ export default function DocsPage() {
             </div>
 
             <div className="docs-nav-group">
-              <div className="docs-nav-product-badge docs-nav-product-badge--luma">✦ LumaSpace</div>
+              <span className="docs-nav-group-label docs-nav-group-label--luma">✦ LumaSpace</span>
               <a href="#lumaspace-intro" className="docs-nav-link">Übersicht</a>
               <a href="#lumaspace-start" className="docs-nav-link">Quickstart</a>
               <a href="#lumaspace-features" className="docs-nav-link">Features</a>
@@ -84,7 +87,7 @@ export default function DocsPage() {
             </div>
 
             <div className="docs-nav-group">
-              <div className="docs-nav-product-badge docs-nav-product-badge--flow">〜 FlowWave</div>
+              <span className="docs-nav-group-label docs-nav-group-label--flow">〜 FlowWave</span>
               <a href="#flowwave-intro" className="docs-nav-link">Übersicht</a>
               <a href="#flowwave-builder" className="docs-nav-link">Web Builder</a>
               <a href="#flowwave-commands-ui" className="docs-nav-link">Commands &amp; Events</a>
@@ -93,34 +96,35 @@ export default function DocsPage() {
             </div>
 
             <div className="docs-nav-group">
-              <div className="docs-nav-product-badge" style={{ background: 'rgba(139,92,246,0.12)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.25)' }}>⬡ Vex0</div>
+              <span className="docs-nav-group-label docs-nav-group-label--vex">⬡ Vex0</span>
               <a href="#vex0-intro" className="docs-nav-link">Übersicht</a>
               <a href="#vex0-start" className="docs-nav-link">Installation</a>
               <a href="#vex0-components" className="docs-nav-link">Komponenten</a>
             </div>
 
             <div className="docs-nav-group">
-              <div className="docs-nav-product-badge" style={{ background: 'rgba(251,191,36,0.10)', color: '#fbbf24', border: '1px solid rgba(251,191,36,0.22)' }}>✦ Vylder</div>
+              <span className="docs-nav-group-label docs-nav-group-label--vylder">✦ Vylder</span>
               <a href="#vylder-intro" className="docs-nav-link">Übersicht</a>
               <a href="#vylder-features" className="docs-nav-link">Features</a>
             </div>
           </div>
         </aside>
 
-        {/* MAIN */}
+        {/* ── MAIN CONTENT ── */}
         <main className="docs-main">
           <div className="docs-content">
 
+            {/* ── INTRO ── */}
             <section className="docs-section" id="intro">
-              <div className="docs-breadcrumb">Docs / Einführung</div>
-              <h1 className="docs-h1">Flux0 Dokumentation</h1>
+              <p className="docs-eyebrow">Flux0 Docs</p>
+              <h1 className="docs-h1">Dokumentation</h1>
               <p className="docs-lead">
-                Willkommen in der offiziellen Dokumentation des Flux Network. Hier findest du alles zu unseren Produkten, von der ersten Installation bis zur API-Referenz.
+                Willkommen in der offiziellen Dokumentation des Flux Network. Hier findest du alles zu unseren Produkten — von der ersten Installation bis zur API-Referenz.
               </p>
 
               <div className="docs-cards-row">
                 <a href="#prismlobby-intro" className="docs-quick-card">
-                  <span className="docs-quick-icon" style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa', fontSize: '1.1rem' }}>◈</span>
+                  <span className="docs-quick-icon docs-quick-icon--prism">◈</span>
                   <div>
                     <strong>PrismLobby</strong>
                     <p>Minecraft Lobby Plugin · Paper</p>
@@ -133,7 +137,7 @@ export default function DocsPage() {
                   </span>
                   <div>
                     <strong>FlowWave</strong>
-                    <p>Visueller Bot Builder · Container</p>
+                    <p>Visueller Bot Builder</p>
                   </div>
                 </a>
                 <a href="#lumaspace-start" className="docs-quick-card">
@@ -153,7 +157,7 @@ export default function DocsPage() {
                   </span>
                   <div>
                     <strong>Vex0</strong>
-                    <p>Open Source Component Framework</p>
+                    <p>Component Framework</p>
                   </div>
                 </a>
               </div>
@@ -161,20 +165,27 @@ export default function DocsPage() {
 
             <section className="docs-section" id="getting-started">
               <h2 className="docs-h2">Erste Schritte</h2>
-              <p>Wähle ein Produkt aus dem Menü links oder klick direkt auf eine der Karten oben. Alle Produkte sind eigenständig, du kannst mit jedem beginnen, das dich interessiert.</p>
+              <p>
+                Wähle ein Produkt aus dem Menü links oder klicke direkt auf eine der Karten oben. Alle Produkte sind eigenständig — du kannst mit jedem beginnen, das dich interessiert.
+              </p>
               <div className="docs-callout docs-callout--info">
-                <strong>Hinweis:</strong> PrismLobby ist live auf Modrinth verfügbar. LumaSpace und FlowWave sind ebenfalls aktiv. Die Dokumentation wird laufend aktualisiert.
+                <strong>Hinweis:</strong> PrismLobby ist live auf Modrinth verfügbar. LumaSpace und FlowWave sind ebenfalls aktiv. Die Dokumentation wird laufend erweitert.
               </div>
             </section>
 
             <div className="docs-divider" />
 
-            {/* ─── PRISMLOBBY ─── */}
-            <div className="docs-product-header docs-product-header--prism" id="prismlobby-intro">
-              <span className="docs-product-icon" style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, borderRadius: 12, flexShrink: 0 }}>◈</span>
+            {/* ═══════════════════════════════════════════
+                PRISMLOBBY
+            ═══════════════════════════════════════════ */}
+            <div className="docs-product-banner docs-product-banner--prism" id="prismlobby-intro">
+              <div className="docs-product-banner-icon docs-product-banner-icon--prism">◈</div>
               <div>
-                <h2 className="docs-h1" style={{ margin: 0 }}>PrismLobby</h2>
-                <span className="docs-product-tag docs-product-tag--live">Live · Paper 1.21.1</span>
+                <h2 className="docs-product-banner-name">PrismLobby</h2>
+                <div className="docs-product-banner-meta">
+                  <span className="docs-tag docs-tag--live">Live</span>
+                  <span className="docs-product-banner-sub">Paper · Minecraft 1.21.1</span>
+                </div>
               </div>
             </div>
 
@@ -183,34 +194,45 @@ export default function DocsPage() {
                 PrismLobby ist ein <strong>Lobby-Management Plugin für PaperMC-Server</strong>. Es verwaltet Spawn-Punkte, Spieler-Routing und bietet eine flexible Konfiguration für Server-Admins — kostenlos auf Modrinth verfügbar.
               </p>
               <div className="docs-feature-list">
-                <div className="docs-feature-item"><span className="docs-feature-icon">🏠</span><div><strong>Spawn-Verwaltung</strong>, Setze und verwalte mehrere Spawn-Punkte per Command</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">⚙️</span><div><strong>Flexible Konfiguration</strong>, Alles in einer übersichtlichen <code className="inline-code">config.yml</code></div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">📊</span><div><strong>PlaceholderAPI</strong>, Platzhalter für Scoreboards, Tab-Liste und Chat</div></div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">🏠</span>
+                  <div><strong>Spawn-Verwaltung</strong> — Setze und verwalte mehrere Spawn-Punkte per Command</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">⚙️</span>
+                  <div><strong>Flexible Konfiguration</strong> — Alles in einer übersichtlichen <code className="inline-code">config.yml</code></div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">📊</span>
+                  <div><strong>PlaceholderAPI</strong> — Platzhalter für Scoreboards, Tab-Liste und Chat</div>
+                </div>
               </div>
             </section>
 
             <section className="docs-section" id="prismlobby-install">
               <h2 className="docs-h2">Installation</h2>
               <p>PrismLobby benötigt einen PaperMC-Server mit Minecraft 1.21.1.</p>
-              <div className="docs-step">
-                <span className="docs-step-num">1</span>
-                <div>
-                  <strong>Plugin herunterladen</strong>
-                  <p>Lade die aktuelle Version von <a href="https://modrinth.com/plugin/prismlobby" target="_blank" rel="noopener" className="docs-link">modrinth.com/plugin/prismlobby</a> herunter.</p>
+              <div className="docs-steps">
+                <div className="docs-step">
+                  <span className="docs-step-num">1</span>
+                  <div className="docs-step-body">
+                    <strong>Plugin herunterladen</strong>
+                    <p>Lade die aktuelle Version von <a href="https://modrinth.com/plugin/prismlobby" target="_blank" rel="noopener noreferrer" className="docs-link">modrinth.com/plugin/prismlobby</a> herunter.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="docs-step">
-                <span className="docs-step-num">2</span>
-                <div>
-                  <strong>In den plugins-Ordner legen</strong>
-                  <p>Kopiere die <code className="inline-code">.jar</code>-Datei in den <code className="inline-code">/plugins/</code>-Ordner deines Servers.</p>
+                <div className="docs-step">
+                  <span className="docs-step-num">2</span>
+                  <div className="docs-step-body">
+                    <strong>In den plugins-Ordner legen</strong>
+                    <p>Kopiere die <code className="inline-code">.jar</code>-Datei in den <code className="inline-code">/plugins/</code>-Ordner deines Servers.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="docs-step">
-                <span className="docs-step-num">3</span>
-                <div>
-                  <strong>Server neu starten</strong>
-                  <p>Starte den Server neu. PrismLobby erstellt automatisch die <code className="inline-code">config.yml</code> im Ordner <code className="inline-code">/plugins/PrismLobby/</code>.</p>
+                <div className="docs-step">
+                  <span className="docs-step-num">3</span>
+                  <div className="docs-step-body">
+                    <strong>Server neu starten</strong>
+                    <p>Starte den Server neu. PrismLobby erstellt automatisch eine <code className="inline-code">config.yml</code> im Ordner <code className="inline-code">/plugins/PrismLobby/</code>.</p>
+                  </div>
                 </div>
               </div>
               <div className="docs-callout docs-callout--info">
@@ -220,10 +242,13 @@ export default function DocsPage() {
 
             <section className="docs-section" id="prismlobby-config">
               <h2 className="docs-h2">Konfiguration</h2>
-              <p>Die <code className="inline-code">config.yml</code> befindet sich unter <code className="inline-code">/plugins/PrismLobby/config.yml</code>.</p>
-              <pre className="docs-code"><code>{`# PrismLobby config.yml
-
-spawn:
+              <p>Die Konfigurationsdatei befindet sich unter <code className="inline-code">/plugins/PrismLobby/config.yml</code>. Jede Option ist in der Datei kommentiert.</p>
+              <div className="code-block">
+                <div className="code-header">
+                  <span className="code-filename">plugins/PrismLobby/config.yml</span>
+                  <span className="code-lang">yaml</span>
+                </div>
+                <pre><code>{`spawn:
   world: world          # Welt des Spawn-Punktes
   x: 0.5
   y: 64.0
@@ -242,7 +267,8 @@ messages:
   prefix: "&8[&5Prism&8] "
   spawn-set: "&aSpawn wurde gesetzt."
   no-permission: "&cDu hast keine Berechtigung."`}</code></pre>
-              <p>Nach Änderungen an der Konfiguration mit <code className="inline-code">/prismlobby reload</code> neu laden — kein Serverneustart nötig.</p>
+              </div>
+              <p>Nach Änderungen an der Konfiguration einfach <code className="inline-code">/prismlobby reload</code> ausführen — kein Serverneustart nötig.</p>
             </section>
 
             <section className="docs-section" id="prismlobby-commands">
@@ -275,7 +301,7 @@ messages:
                     <tr>
                       <td><code className="inline-code">/prismlobby version</code></td>
                       <td>—</td>
-                      <td>Zeigt die installierte Version an</td>
+                      <td>Zeigt die installierte Plugin-Version an</td>
                     </tr>
                   </tbody>
                 </table>
@@ -286,8 +312,10 @@ messages:
             </section>
 
             <section className="docs-section" id="prismlobby-placeholders">
-              <h2 className="docs-h2">Platzhalter</h2>
-              <p>PrismLobby unterstützt <strong>PlaceholderAPI</strong>. Installiere PlaceholderAPI auf deinem Server, um die folgenden Platzhalter in Scoreboards, der Tab-Liste, im Chat und in anderen Plugins nutzen zu können.</p>
+              <h2 className="docs-h2">PlaceholderAPI Platzhalter</h2>
+              <p>
+                PrismLobby unterstützt <strong>PlaceholderAPI</strong>. Installiere PlaceholderAPI auf deinem Server, um die folgenden Platzhalter in Scoreboards, der Tab-Liste, im Chat und in anderen Plugins nutzen zu können.
+              </p>
               <div className="docs-table-wrap">
                 <table className="docs-table">
                   <thead>
@@ -301,7 +329,7 @@ messages:
                     <tr>
                       <td><code className="inline-code">%prismlobby_world%</code></td>
                       <td>Text</td>
-                      <td>Welt, in der der Spieler sich befindet</td>
+                      <td>Welt, in der sich der Spieler befindet</td>
                     </tr>
                     <tr>
                       <td><code className="inline-code">%prismlobby_online%</code></td>
@@ -315,7 +343,7 @@ messages:
                     </tr>
                     <tr>
                       <td><code className="inline-code">%prismlobby_tps%</code></td>
-                      <td>Dezimalzahl</td>
+                      <td>Dezimal</td>
                       <td>Aktuelle Server-TPS (Ticks per Second)</td>
                     </tr>
                     <tr>
@@ -332,27 +360,38 @@ messages:
                 </table>
               </div>
               <h3 className="docs-h3">Beispiel — Scoreboard</h3>
-              <pre className="docs-code"><code>{`# Beispiel mit einem Scoreboard-Plugin (z.B. FastBoard)
-lines:
+              <div className="code-block">
+                <div className="code-header">
+                  <span className="code-filename">scoreboard config (FastBoard / CMI)</span>
+                  <span className="code-lang">yaml</span>
+                </div>
+                <pre><code>{`lines:
   - "&7Spieler online: &f%prismlobby_online%"
-  - "&7Server-TPS: &a%prismlobby_tps%"
-  - "&7Welt: &f%prismlobby_world%"`}</code></pre>
+  - "&7Max. Spieler:   &f%prismlobby_max_players%"
+  - "&7Server-TPS:     &a%prismlobby_tps%"
+  - "&7Aktuelle Welt:  &f%prismlobby_world%"`}</code></pre>
+              </div>
               <div className="docs-callout docs-callout--info">
-                PlaceholderAPI muss separat installiert sein. Download: <a href="https://www.spigotmc.org/resources/placeholderapi.6245/" target="_blank" rel="noopener" className="docs-link">SpigotMC · PlaceholderAPI</a>
+                PlaceholderAPI muss separat installiert werden. Download: <a href="https://www.spigotmc.org/resources/placeholderapi.6245/" target="_blank" rel="noopener noreferrer" className="docs-link">SpigotMC · PlaceholderAPI</a>
               </div>
             </section>
 
             <div className="docs-divider" />
 
-            {/* ─── LUMASPACE ─── */}
-            <div className="docs-product-header docs-product-header--luma" id="lumaspace-intro">
-              <span className="docs-product-icon docs-product-icon--logo">
+            {/* ═══════════════════════════════════════════
+                LUMASPACE
+            ═══════════════════════════════════════════ */}
+            <div className="docs-product-banner docs-product-banner--luma" id="lumaspace-intro">
+              <div className="docs-product-banner-icon docs-product-banner-icon--logo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/lumaspace-icon.png" alt="LumaSpace" className="product-logo-icon" />
-              </span>
+              </div>
               <div>
-                <h2 className="docs-h1" style={{ margin: 0 }}>LumaSpace</h2>
-                <span className="docs-product-tag docs-product-tag--live">Live</span>
+                <h2 className="docs-product-banner-name">LumaSpace</h2>
+                <div className="docs-product-banner-meta">
+                  <span className="docs-tag docs-tag--live">Live</span>
+                  <span className="docs-product-banner-sub">Web-App · Produktivität</span>
+                </div>
               </div>
             </div>
 
@@ -360,21 +399,48 @@ lines:
               <p className="docs-lead">
                 LumaSpace ist eine KI-gestützte Produktivitäts- und Planungsplattform für Teams und Einzelpersonen mit Fokus auf Realtime Collaboration und intelligente Task-Organisation.
               </p>
-              <h3 className="docs-h3">Was ist LumaSpace?</h3>
-              <p>LumaSpace kombiniert Task-Management, Focus-Sessions und Team-Koordination in einer einzigen Oberfläche. Die KI analysiert Workload und schlägt optimale Zeitpläne vor.</p>
               <div className="docs-feature-list">
-                <div className="docs-feature-item"><span className="docs-feature-icon">⚡</span><div><strong>Realtime Collaboration</strong>, Änderungen sind sofort für alle Teammitglieder sichtbar</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">🧠</span><div><strong>AI Planning</strong>, Automatische Priorisierung und Scheduling basierend auf Deadlines</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">🎯</span><div><strong>Focus Mode</strong>, Deep-Work-Sessions mit automatischem Status und Do-not-disturb</div></div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">⚡</span>
+                  <div><strong>Realtime Collaboration</strong> — Änderungen sind sofort für alle Teammitglieder sichtbar</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">🧠</span>
+                  <div><strong>AI Planning</strong> — Automatische Priorisierung und Scheduling basierend auf Deadlines</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">🎯</span>
+                  <div><strong>Focus Mode</strong> — Deep-Work-Sessions mit automatischem Status und Do-not-disturb</div>
+                </div>
               </div>
             </section>
 
             <section className="docs-section" id="lumaspace-start">
               <h2 className="docs-h2">Quickstart</h2>
-              <p>LumaSpace ist eine Web-App, keine Installation notwendig.</p>
-              <div className="docs-step"><span className="docs-step-num">1</span><div><strong>Account erstellen</strong><p>Gehe zu <a href="https://lumaspace.de" target="_blank" rel="noopener" className="docs-link">lumaspace.de</a> und registriere dich kostenlos.</p></div></div>
-              <div className="docs-step"><span className="docs-step-num">2</span><div><strong>Workspace anlegen</strong><p>Erstelle deinen ersten Workspace, solo oder im Team. Importiere bestehende Tasks aus Notion, Trello oder Linear.</p></div></div>
-              <div className="docs-step"><span className="docs-step-num">3</span><div><strong>Loslegen</strong><p>Füge Tasks hinzu, aktiviere den Focus Mode und lass die KI deinen Tag planen.</p></div></div>
+              <p>LumaSpace ist eine Web-App — keine Installation notwendig.</p>
+              <div className="docs-steps">
+                <div className="docs-step">
+                  <span className="docs-step-num">1</span>
+                  <div className="docs-step-body">
+                    <strong>Account erstellen</strong>
+                    <p>Gehe zu <a href="https://lumaspace.de" target="_blank" rel="noopener noreferrer" className="docs-link">lumaspace.de</a> und registriere dich kostenlos.</p>
+                  </div>
+                </div>
+                <div className="docs-step">
+                  <span className="docs-step-num">2</span>
+                  <div className="docs-step-body">
+                    <strong>Workspace anlegen</strong>
+                    <p>Erstelle deinen ersten Workspace — solo oder im Team. Importiere bestehende Tasks aus Notion, Trello oder Linear.</p>
+                  </div>
+                </div>
+                <div className="docs-step">
+                  <span className="docs-step-num">3</span>
+                  <div className="docs-step-body">
+                    <strong>Loslegen</strong>
+                    <p>Füge Tasks hinzu, aktiviere den Focus Mode und lass die KI deinen Tag planen.</p>
+                  </div>
+                </div>
+              </div>
             </section>
 
             <section className="docs-section" id="lumaspace-features">
@@ -388,32 +454,46 @@ lines:
             <section className="docs-section" id="lumaspace-api">
               <h2 className="docs-h2">API</h2>
               <div className="docs-callout docs-callout--warn">
-                Die LumaSpace API befindet sich in Vorbereitung. Trag dich in den Discord ein, um als erster Zugang zu erhalten.
+                Die LumaSpace API befindet sich in Vorbereitung. Trag dich im Discord ein, um als Erster Zugang zu erhalten.
               </div>
             </section>
 
             <div className="docs-divider" />
 
-            {/* ─── FLOWWAVE ─── */}
-            <div className="docs-product-header docs-product-header--flow" id="flowwave-intro">
-              <span className="docs-product-icon docs-product-icon--logo">
+            {/* ═══════════════════════════════════════════
+                FLOWWAVE
+            ═══════════════════════════════════════════ */}
+            <div className="docs-product-banner docs-product-banner--flow" id="flowwave-intro">
+              <div className="docs-product-banner-icon docs-product-banner-icon--logo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/flowwave-icon.png" alt="FlowWave" className="product-logo-icon" />
-              </span>
+              </div>
               <div>
-                <h2 className="docs-h1" style={{ margin: 0 }}>FlowWave</h2>
-                <span className="docs-product-tag docs-product-tag--live">Open Beta</span>
+                <h2 className="docs-product-banner-name">FlowWave</h2>
+                <div className="docs-product-banner-meta">
+                  <span className="docs-tag docs-tag--beta">Open Beta</span>
+                  <span className="docs-product-banner-sub">Web-App · Discord Bot Builder</span>
+                </div>
               </div>
             </div>
 
             <section className="docs-section">
               <p className="docs-lead">
-                FlowWave ist ein <strong>visueller Discord-Bot-Builder im Browser</strong>. Du erstellst deinen Bot komplett per Drag-and-drop, ohne eine einzige Zeile Code zu schreiben. Im Hintergrund läuft alles auf <strong>pycord v2</strong> in einem isolierten Container.
+                FlowWave ist ein <strong>visueller Discord-Bot-Builder im Browser</strong>. Du erstellst deinen Bot komplett per Drag-and-drop, ohne eine einzige Zeile Code. Im Hintergrund läuft alles auf <strong>pycord v2</strong> in einem isolierten Container.
               </p>
               <div className="docs-feature-list">
-                <div className="docs-feature-item"><span className="docs-feature-icon">🖥️</span><div><strong>Web Builder</strong>, Bot-Logik visuell im Browser konfigurieren, kein Python-Wissen nötig</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">📦</span><div><strong>Container-Deployment</strong>, Jeder Bot läuft in einem eigenen, isolierten Container</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">⚡</span><div><strong>pycord v2 Engine</strong>, Professionelle Discord-API-Unterstützung unter der Haube</div></div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">🖥️</span>
+                  <div><strong>Web Builder</strong> — Bot-Logik visuell im Browser konfigurieren, kein Python-Wissen nötig</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">📦</span>
+                  <div><strong>Container-Deployment</strong> — Jeder Bot läuft in einem eigenen, isolierten Container</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">⚡</span>
+                  <div><strong>pycord v2 Engine</strong> — Professionelle Discord-API-Unterstützung unter der Haube</div>
+                </div>
               </div>
               <div className="docs-callout docs-callout--info">
                 FlowWave befindet sich in aktiver Entwicklung. Die Web-Oberfläche und Container-Infrastruktur werden gerade aufgebaut. Trag dich im Discord ein, um Early Access zu erhalten.
@@ -422,56 +502,83 @@ lines:
 
             <section className="docs-section" id="flowwave-builder">
               <h2 className="docs-h2">Web Builder</h2>
-              <p>Der FlowWave Web Builder ist die zentrale Oberfläche, in der du deinen Discord-Bot zusammenstellst, vollständig im Browser, ohne lokale Installation.</p>
-              <div className="docs-step"><span className="docs-step-num">1</span><div><strong>Anmelden &amp; Bot-Projekt erstellen</strong><p>Öffne den FlowWave Web Builder und lege ein neues Bot-Projekt an. Gib deinen Discord Bot Token ein, er wird verschlüsselt gespeichert und nur im Container verwendet.</p></div></div>
-              <div className="docs-step"><span className="docs-step-num">2</span><div><strong>Commands &amp; Events visuell konfigurieren</strong><p>Wähle im Builder aus vorgefertigten Slash-Command- und Event-Blöcken. Konfiguriere Namen, Beschreibungen, Optionen und Antworten direkt im UI, kein Code nötig.</p></div></div>
-              <div className="docs-step"><span className="docs-step-num">3</span><div><strong>Container deployen</strong><p>Klick auf &quot;Deploy&quot;, FlowWave baut automatisch einen Container mit deiner Konfiguration und startet ihn. Dein Bot ist innerhalb von Sekunden live auf Discord.</p></div></div>
-              <div className="docs-step"><span className="docs-step-num">4</span><div><strong>Live-Monitoring</strong><p>Im Dashboard siehst du den Container-Status, Logs und Uptime deines Bots in Echtzeit. Änderungen im Builder werden als neuer Container-Build ausgerollt.</p></div></div>
+              <p>Der FlowWave Web Builder ist die zentrale Oberfläche, in der du deinen Discord-Bot zusammenstellst — vollständig im Browser, ohne lokale Installation.</p>
+              <div className="docs-steps">
+                <div className="docs-step">
+                  <span className="docs-step-num">1</span>
+                  <div className="docs-step-body">
+                    <strong>Anmelden &amp; Bot-Projekt erstellen</strong>
+                    <p>Öffne den FlowWave Web Builder und lege ein neues Bot-Projekt an. Gib deinen Discord Bot Token ein — er wird verschlüsselt gespeichert und nur im Container verwendet.</p>
+                  </div>
+                </div>
+                <div className="docs-step">
+                  <span className="docs-step-num">2</span>
+                  <div className="docs-step-body">
+                    <strong>Commands &amp; Events visuell konfigurieren</strong>
+                    <p>Wähle im Builder aus vorgefertigten Slash-Command- und Event-Blöcken. Konfiguriere Namen, Beschreibungen, Optionen und Antworten direkt im UI — kein Code nötig.</p>
+                  </div>
+                </div>
+                <div className="docs-step">
+                  <span className="docs-step-num">3</span>
+                  <div className="docs-step-body">
+                    <strong>Container deployen</strong>
+                    <p>Klick auf &quot;Deploy&quot; — FlowWave baut automatisch einen Container mit deiner Konfiguration und startet ihn. Dein Bot ist innerhalb von Sekunden live auf Discord.</p>
+                  </div>
+                </div>
+                <div className="docs-step">
+                  <span className="docs-step-num">4</span>
+                  <div className="docs-step-body">
+                    <strong>Live-Monitoring</strong>
+                    <p>Im Dashboard siehst du Container-Status, Logs und Uptime deines Bots in Echtzeit. Änderungen im Builder werden als neuer Container-Build ausgerollt.</p>
+                  </div>
+                </div>
+              </div>
             </section>
 
             <section className="docs-section" id="flowwave-commands-ui">
               <h2 className="docs-h2">Commands &amp; Events konfigurieren</h2>
-              <p>Alle Bot-Funktionen werden über den visuellen Builder eingestellt, du wählst Blöcke aus und füllst Felder aus.</p>
               <h3 className="docs-h3">Slash Commands</h3>
               <p>Füge einen Slash-Command-Block hinzu und konfiguriere:</p>
               <ul className="docs-list">
-                <li><strong>Name</strong>, der Command-Name (z.B. <code className="inline-code">ping</code>, <code className="inline-code">info</code>)</li>
-                <li><strong>Beschreibung</strong>, wird Nutzern in Discord angezeigt</li>
-                <li><strong>Optionen</strong>, optionale oder Pflicht-Parameter mit Typ-Auswahl (Text, Zahl, User, Channel …)</li>
-                <li><strong>Antwort</strong>, statischer Text, Embed-Template oder dynamische Logik-Blöcke</li>
+                <li><strong>Name</strong> — der Command-Name (z.B. <code className="inline-code">ping</code>, <code className="inline-code">info</code>)</li>
+                <li><strong>Beschreibung</strong> — wird Nutzern in Discord angezeigt</li>
+                <li><strong>Optionen</strong> — Parameter mit Typ-Auswahl (Text, Zahl, User, Channel …)</li>
+                <li><strong>Antwort</strong> — statischer Text, Embed-Template oder dynamische Logik-Blöcke</li>
               </ul>
               <h3 className="docs-h3">Events</h3>
-              <p>Reagiere auf Discord-Events ohne Code, wähle das Event und definiere die Aktion:</p>
               <ul className="docs-list">
-                <li><strong>on_member_join</strong>, Willkommensnachricht automatisch senden</li>
-                <li><strong>on_message</strong>, Keyword-Filter oder Auto-Antworten konfigurieren</li>
-                <li><strong>on_reaction_add</strong>, Reaction-Roles visuell zuweisen</li>
-                <li><strong>on_ready</strong>, Status und Aktivität des Bots beim Start setzen</li>
+                <li><code className="inline-code">on_member_join</code> — Willkommensnachricht automatisch senden</li>
+                <li><code className="inline-code">on_message</code> — Keyword-Filter oder Auto-Antworten konfigurieren</li>
+                <li><code className="inline-code">on_reaction_add</code> — Reaction-Roles visuell zuweisen</li>
+                <li><code className="inline-code">on_ready</code> — Status und Aktivität des Bots beim Start setzen</li>
               </ul>
-              <h3 className="docs-h3">UI-Komponenten</h3>
-              <p>Buttons, Dropdowns und Modals lassen sich per Block-System an Commands anhängen, inklusive Berechtigungsregeln und Antwortlogik, alles im Builder konfigurierbar.</p>
             </section>
 
             <section className="docs-section" id="flowwave-container">
               <h2 className="docs-h2">Container Deployment</h2>
-              <p>Jeder FlowWave-Bot läuft in einem eigenen, isolierten Container, vollständig gemanaged von FlowWave.</p>
-              <h3 className="docs-h3">Wie es funktioniert</h3>
+              <p>Jeder FlowWave-Bot läuft in einem eigenen, isolierten Container — vollständig gemanaged von FlowWave.</p>
               <div className="docs-feature-list">
-                <div className="docs-feature-item"><span className="docs-feature-icon">1</span><div><strong>Build</strong>, FlowWave generiert aus deiner Builder-Konfiguration automatisch ein pycord v2 Projekt und verpackt es in ein Container-Image.</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">2</span><div><strong>Deploy</strong>, Das Image wird in einer isolierten Laufzeitumgebung gestartet. Dein Bot-Token ist nur innerhalb des Containers sichtbar.</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">3</span><div><strong>Betrieb</strong>, FlowWave überwacht den Container, startet ihn bei Absturz automatisch neu und hält Logs bereit.</div></div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">1</span>
+                  <div><strong>Build</strong> — FlowWave generiert aus der Builder-Konfiguration ein pycord v2 Projekt und packt es in ein Container-Image.</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">2</span>
+                  <div><strong>Deploy</strong> — Das Image wird in einer isolierten Laufzeitumgebung gestartet. Der Bot-Token ist nur innerhalb des Containers sichtbar.</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">3</span>
+                  <div><strong>Betrieb</strong> — FlowWave überwacht den Container, startet ihn bei Absturz neu und hält Logs bereit.</div>
+                </div>
               </div>
-              <h3 className="docs-h3">Updates ausrollen</h3>
-              <p>Änderungen im Web Builder lösen automatisch einen neuen Build aus. Der laufende Container wird graceful ersetzt, dein Bot ist nur für wenige Sekunden offline.</p>
               <div className="docs-callout docs-callout--warn">
-                Eigene Container-Images oder direktes SSH-Zugriff sind in der aktuellen Alpha nicht vorgesehen. Das Feature ist für spätere Versionen geplant.
+                Eigene Container-Images oder direkter SSH-Zugriff sind in der aktuellen Alpha nicht vorgesehen. Das Feature ist für spätere Versionen geplant.
               </div>
             </section>
 
             <section className="docs-section" id="flowwave-pycord">
               <h2 className="docs-h2">pycord v2 Engine</h2>
               <p>Unter der Haube verwendet FlowWave <strong>pycord v2</strong>, eine der leistungsfähigsten Python-Bibliotheken für die Discord-API mit vollständiger Slash-Command- und UI-Unterstützung.</p>
-              <h3 className="docs-h3">Was pycord v2 ermöglicht</h3>
               <ul className="docs-list">
                 <li>Vollständige Slash-Command- und Application-Command-Unterstützung</li>
                 <li>Discord UI-Komponenten: Buttons, Select Menus, Modals</li>
@@ -479,39 +586,50 @@ lines:
                 <li>Cogs für modulare Bot-Strukturen</li>
                 <li>Alle Gateway Events der Discord-API</li>
               </ul>
-              <h3 className="docs-h3">Für Entwickler</h3>
-              <p>Fortgeschrittene Nutzer können in späteren Versionen von FlowWave eigene pycord v2 Cogs als Module hochladen und in den Builder integrieren, für Funktionen, die über den visuellen Builder hinausgehen.</p>
               <div className="docs-callout docs-callout--info">
-                Du möchtest direkt mit pycord v2 arbeiten? Die offizielle Dokumentation findest du unter{' '}
-                <a href="https://docs.pycord.dev" target="_blank" rel="noopener" className="docs-link">docs.pycord.dev</a>.
+                Offizielle pycord-Dokumentation: <a href="https://docs.pycord.dev" target="_blank" rel="noopener noreferrer" className="docs-link">docs.pycord.dev</a>
               </div>
             </section>
 
             <div className="docs-divider" />
 
-            {/* ─── VEX0 ─── */}
-            <div className="docs-product-header" id="vex0-intro" style={{ borderLeft: '3px solid #a78bfa' }}>
-              <span className="docs-product-icon docs-product-icon--logo">
+            {/* ═══════════════════════════════════════════
+                VEX0
+            ═══════════════════════════════════════════ */}
+            <div className="docs-product-banner docs-product-banner--vex" id="vex0-intro">
+              <div className="docs-product-banner-icon docs-product-banner-icon--logo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/vex0-icon.png" alt="Vex0" className="product-logo-icon" />
-              </span>
+              </div>
               <div>
-                <h2 className="docs-h1" style={{ margin: 0 }}>Vex0</h2>
-                <span className="docs-product-tag" style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa' }}>In Entwicklung</span>
+                <h2 className="docs-product-banner-name">Vex0</h2>
+                <div className="docs-product-banner-meta">
+                  <span className="docs-tag docs-tag--dev">In Entwicklung</span>
+                  <span className="docs-product-banner-sub">npm · React / Next.js</span>
+                </div>
               </div>
             </div>
 
             <section className="docs-section">
               <p className="docs-lead">
-                Vex0 ist ein <strong>Open Source Component Framework</strong> für moderne Web-Apps, designed für Entwickler, die schnelle, konsistente UI-Komponenten ohne Overhead wollen.
+                Vex0 ist ein <strong>Open Source Component Framework</strong> für moderne Web-Apps — designed für Entwickler, die schnelle, konsistente UI-Komponenten ohne Overhead wollen.
               </p>
               <div className="docs-feature-list">
-                <div className="docs-feature-item"><span className="docs-feature-icon">⚡</span><div><strong>Zero Config</strong>, Komponenten direkt importieren, kein Build-Setup nötig</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">🎨</span><div><strong>Theming</strong>, CSS-Variablen-basiertes Design-System, leicht anpassbar</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">📦</span><div><strong>Tree-shakeable</strong>, Nur die Komponenten, die du nutzt, landen im Bundle</div></div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">⚡</span>
+                  <div><strong>Zero Config</strong> — Komponenten direkt importieren, kein Build-Setup nötig</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">🎨</span>
+                  <div><strong>Theming</strong> — CSS-Variablen-basiertes Design-System, leicht anpassbar</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">📦</span>
+                  <div><strong>Tree-shakeable</strong> — Nur die Komponenten, die du nutzt, landen im Bundle</div>
+                </div>
               </div>
               <div className="docs-callout docs-callout--info">
-                Vex0 befindet sich in aktiver Entwicklung. Melde dich im Discord um Early Access und Updates zu erhalten.
+                Vex0 befindet sich in aktiver Entwicklung. Melde dich im Discord an, um Early Access und Updates zu erhalten.
               </div>
             </section>
 
@@ -521,63 +639,83 @@ lines:
                 Das npm-Paket ist noch nicht öffentlich verfügbar. Die Installationsanleitung erscheint mit dem ersten Release.
               </div>
               <p>Geplant:</p>
-              <pre style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 10, padding: '14px 18px', fontSize: '0.84rem', overflowX: 'auto' }}><code>npm install @vex0/ui</code></pre>
+              <div className="code-block">
+                <div className="code-header">
+                  <span className="code-lang">bash</span>
+                </div>
+                <pre><code>npm install @vex0/ui</code></pre>
+              </div>
             </section>
 
             <section className="docs-section" id="vex0-components">
               <h2 className="docs-h2">Komponenten</h2>
               <p>Vex0 wird eine vollständige Komponentenbibliothek für React/Next.js mitbringen:</p>
               <ul className="docs-list">
-                <li><code className="inline-code">Button</code>, Varianten: primary, ghost, destructive</li>
-                <li><code className="inline-code">Card</code> / <code className="inline-code">CardContent</code>, Flexible Container-Komponente</li>
-                <li><code className="inline-code">Input</code> / <code className="inline-code">Textarea</code>, Form-Elemente mit Validierungsstate</li>
-                <li><code className="inline-code">Modal</code>, Accessible Dialog mit Backdrop</li>
-                <li><code className="inline-code">Badge</code> / <code className="inline-code">Tag</code>, Status-Indikatoren</li>
+                <li><code className="inline-code">Button</code> — Varianten: primary, ghost, destructive</li>
+                <li><code className="inline-code">Card</code> / <code className="inline-code">CardContent</code> — Flexible Container-Komponente</li>
+                <li><code className="inline-code">Input</code> / <code className="inline-code">Textarea</code> — Form-Elemente mit Validierungsstate</li>
+                <li><code className="inline-code">Modal</code> — Accessible Dialog mit Backdrop</li>
+                <li><code className="inline-code">Badge</code> / <code className="inline-code">Tag</code> — Status-Indikatoren</li>
               </ul>
             </section>
 
             <div className="docs-divider" />
 
-            {/* ─── VYLDER ─── */}
-            <div className="docs-product-header" id="vylder-intro" style={{ borderLeft: '3px solid #fbbf24' }}>
-              <span className="docs-product-icon docs-product-icon--logo">
+            {/* ═══════════════════════════════════════════
+                VYLDER
+            ═══════════════════════════════════════════ */}
+            <div className="docs-product-banner docs-product-banner--vylder" id="vylder-intro">
+              <div className="docs-product-banner-icon docs-product-banner-icon--logo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/vylder-icon.png" alt="Vylder" className="product-logo-icon" />
-              </span>
+              </div>
               <div>
-                <h2 className="docs-h1" style={{ margin: 0 }}>Vylder</h2>
-                <span className="docs-product-tag" style={{ background: 'rgba(251,191,36,0.12)', color: '#fbbf24' }}>Coming Soon</span>
+                <h2 className="docs-product-banner-name">Vylder</h2>
+                <div className="docs-product-banner-meta">
+                  <span className="docs-tag docs-tag--soon">Coming Soon</span>
+                  <span className="docs-product-banner-sub">Web · Visual + Code Builder</span>
+                </div>
               </div>
             </div>
 
             <section className="docs-section">
               <p className="docs-lead">
-                Vylder ist ein <strong>visueller Website-Builder mit integriertem Code-Editor</strong>, für Entwickler und Designer, die schnell professionelle Websites erstellen wollen, ohne zwischen Tool und IDE zu wechseln.
+                Vylder ist ein <strong>visueller Website-Builder mit integriertem Code-Editor</strong> — für Entwickler und Designer, die schnell professionelle Websites erstellen wollen, ohne zwischen Tool und IDE zu wechseln.
               </p>
               <div className="docs-feature-list">
-                <div className="docs-feature-item"><span className="docs-feature-icon">🖱️</span><div><strong>Visual Editor</strong>, Elemente per Drag-and-drop platzieren und direkt im Browser stylen</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">💻</span><div><strong>Code Editor</strong>, Jederzeit in den Code wechseln und manuell anpassen</div></div>
-                <div className="docs-feature-item"><span className="docs-feature-icon">🚀</span><div><strong>One-Click Deploy</strong>, Direkt aus Vylder auf vylder.dev oder eigene Domain deployen</div></div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">🖱️</span>
+                  <div><strong>Visual Editor</strong> — Elemente per Drag-and-drop platzieren und direkt im Browser stylen</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">💻</span>
+                  <div><strong>Code Editor</strong> — Jederzeit in den Code wechseln und manuell anpassen</div>
+                </div>
+                <div className="docs-feature-item">
+                  <span className="docs-feature-icon">🚀</span>
+                  <div><strong>One-Click Deploy</strong> — Direkt aus Vylder auf vylder.dev oder eigene Domain deployen</div>
+                </div>
               </div>
               <div className="docs-callout docs-callout--info">
-                Vylder ist noch nicht öffentlich verfügbar. Auf <a href="https://vylder.dev" target="_blank" rel="noopener" className="docs-link">vylder.dev</a> kannst du dich für Early Access eintragen.
+                Vylder ist noch nicht öffentlich verfügbar. Auf <a href="https://vylder.dev" target="_blank" rel="noopener noreferrer" className="docs-link">vylder.dev</a> kannst du dich für Early Access eintragen.
               </div>
             </section>
 
             <section className="docs-section" id="vylder-features">
               <h2 className="docs-h2">Geplante Features</h2>
               <h3 className="docs-h3">Visual + Code Hybrid</h3>
-              <p>Anders als reine No-Code-Tools sperrt Vylder dich nicht ein, du kannst jederzeit zwischen der visuellen Ansicht und dem echten Code hin- und herschalten. Änderungen werden in beide Richtungen synchronisiert.</p>
+              <p>Anders als reine No-Code-Tools sperrt Vylder dich nicht ein — du kannst jederzeit zwischen visueller Ansicht und echtem Code hin- und herschalten. Änderungen werden in beide Richtungen synchronisiert.</p>
               <h3 className="docs-h3">Component Library</h3>
-              <p>Vylder kommt mit einer eingebauten Komponentenbibliothek (basierend auf Vex0), fertige Sektionen, Navigation, Hero-Bereiche und mehr als Ausgangspunkt.</p>
+              <p>Vylder kommt mit einer eingebauten Komponentenbibliothek (basierend auf Vex0) — fertige Sektionen, Navigation, Hero-Bereiche und mehr als Ausgangspunkt.</p>
               <h3 className="docs-h3">Export &amp; Deploy</h3>
               <p>Fertige Projekte können als statische HTML/CSS-Seite exportiert oder direkt über Vylder gehostet werden. Custom-Domain-Support ist geplant.</p>
             </section>
 
-            <div className="docs-footer">
-              <p>Fragen? Komm in unseren <a href="https://discord.gg/yqQutP6EKV" target="_blank" rel="noopener" className="docs-link">Discord Server</a>.</p>
-              <p className="docs-footer-copy">© 2026 Flux0 · flux0.dev · Powered by Flux Network</p>
-            </div>
+            {/* ── FOOTER ── */}
+            <footer className="docs-footer">
+              <p>Fragen? Komm in unseren <a href="https://discord.gg/yqQutP6EKV" target="_blank" rel="noopener noreferrer" className="docs-link">Discord Server</a>.</p>
+              <p className="docs-footer-copy">© 2026 Flux0 · flux0.dev</p>
+            </footer>
 
           </div>
         </main>
