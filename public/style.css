@@ -1452,7 +1452,7 @@ body::after {
 /* Floating nav button — hidden on desktop, visible on mobile */
 .docs-mobile-toggle {
   display: none;
-  position: fixed; bottom: 28px; right: 20px; z-index: 130;
+  position: fixed; bottom: 96px; right: 20px; z-index: 9999;
   width: 52px; height: 52px;
   align-items: center; justify-content: center;
   background: rgba(255,255,255,0.1);
