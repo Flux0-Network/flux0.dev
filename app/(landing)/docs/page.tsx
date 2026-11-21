@@ -70,6 +70,10 @@ export default function DocsPage() {
               <a href="#getting-started" className="docs-nav-link">Erste Schritte</a>
             </div>
 
+            <div className="docs-nav-category">
+              <span>Plugins</span>
+            </div>
+
             <div className="docs-nav-group">
               <span className="docs-nav-group-label docs-nav-group-label--prism">◈ PrismLobby</span>
               <a href="#prismlobby-intro" className="docs-nav-link">Übersicht</a>
@@ -77,6 +81,10 @@ export default function DocsPage() {
               <a href="#prismlobby-config" className="docs-nav-link">Konfiguration</a>
               <a href="#prismlobby-commands" className="docs-nav-link">Commands</a>
               <a href="#prismlobby-placeholders" className="docs-nav-link">Platzhalter</a>
+            </div>
+
+            <div className="docs-nav-category">
+              <span>Produkte</span>
             </div>
 
             <div className="docs-nav-group">
