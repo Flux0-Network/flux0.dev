@@ -288,11 +288,27 @@ export default function Navbar() {
                 >
                   {link.label}
                 </a>
+              ) : link.href.startsWith('#') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'rgba(255,255,255,0.65)',
+                    fontSize: '0.9rem',
+                    fontWeight: 500,
+                    padding: '10px 14px',
+                    borderRadius: '10px',
+                    transition: 'color 0.15s, background 0.15s',
+                  }}
+                >
+                  {link.label}
+                </a>
               ) : (
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMenuOpen(false)}
                   style={{
                     textDecoration: 'none',
                     color: 'rgba(255,255,255,0.65)',
