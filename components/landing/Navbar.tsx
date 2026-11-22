@@ -53,8 +53,8 @@ export default function Navbar() {
       if (menuRef.current && !menuRef.current.contains(e.target as Node))
         setMenuOpen(false);
     }
-    document.addEventListener('mousedown', onOutside);
-    return () => document.removeEventListener('mousedown', onOutside);
+    document.addEventListener('click', onOutside);
+    return () => document.removeEventListener('click', onOutside);
   }, [menuOpen]);
 
   const displayName = user ? (user.global_name || user.username) : null;
@@ -140,31 +140,59 @@ export default function Navbar() {
         >
           {NAV_LINKS.map(link => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}
-                style={{
-                  textDecoration: 'none',
-                  color: 'rgba(255,255,255,0.55)',
-                  fontSize: '0.84rem',
-                  fontWeight: 500,
-                  padding: '6px 12px',
-                  borderRadius: '10px',
-                  display: 'block',
-                  transition: 'color 0.15s, background 0.15s',
-                  whiteSpace: 'nowrap',
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)';
-                  (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.07)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)';
-                  (e.currentTarget as HTMLElement).style.background = 'transparent';
-                }}
-              >
-                {link.label}
-              </a>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener"
+                  style={{
+                    textDecoration: 'none',
+                    color: 'rgba(255,255,255,0.55)',
+                    fontSize: '0.84rem',
+                    fontWeight: 500,
+                    padding: '6px 12px',
+                    borderRadius: '10px',
+                    display: 'block',
+                    transition: 'color 0.15s, background 0.15s',
+                    whiteSpace: 'nowrap',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)';
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.07)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)';
+                    (e.currentTarget as HTMLElement).style.background = 'transparent';
+                  }}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  href={link.href}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'rgba(255,255,255,0.55)',
+                    fontSize: '0.84rem',
+                    fontWeight: 500,
+                    padding: '6px 12px',
+                    borderRadius: '10px',
+                    display: 'block',
+                    transition: 'color 0.15s, background 0.15s',
+                    whiteSpace: 'nowrap',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)';
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.07)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)';
+                    (e.currentTarget as HTMLElement).style.background = 'transparent';
+                  }}
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
