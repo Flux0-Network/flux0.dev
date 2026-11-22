@@ -1480,12 +1480,12 @@ body::after {
 .docs-overlay--open { display: block; }
 
 /* Layout */
-.docs-layout { display: flex; padding-top: 56px; min-height: 100vh; }
+.docs-layout { display: flex; padding-top: 88px; min-height: 100vh; }
 
 /* Sidebar */
 .docs-sidebar {
   width: 260px; flex-shrink: 0;
-  position: fixed; top: 56px; bottom: 0; left: 0;
+  position: fixed; top: 88px; bottom: 0; left: 0;
   overflow-y: scroll; -webkit-overflow-scrolling: touch;
   border-right: 1px solid var(--border);
   background: var(--bg);

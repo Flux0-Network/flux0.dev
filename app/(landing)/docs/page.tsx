@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import DocsNav from '@/components/landing/DocsNav';
 import CookieNotice from '@/components/landing/CookieNotice';
+import Navbar from '@/components/landing/Navbar';
 
 export const metadata: Metadata = {
   title: 'Docs · Flux Network',
@@ -20,33 +21,7 @@ export default function DocsPage() {
   return (
     <div className="docs-body">
       <DocsNav />
-
-      {/* ── HEADER ── */}
-      <header className="docs-header">
-        <div className="docs-header-inner">
-          <Link href="/" className="docs-logo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Flux0" height={24} />
-            <span className="docs-logo-sep">/</span>
-            <span className="docs-logo-label">Docs</span>
-          </Link>
-
-          <div className="docs-header-spacer" />
-
-          <nav className="docs-header-actions">
-            <Link href="/" className="docs-header-back">← flux0.dev</Link>
-            <a
-              href="https://discord.gg/yqQutP6EKV"
-              className="docs-header-discord"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Discord
-            </a>
-          </nav>
-
-        </div>
-      </header>
+      <Navbar />
 
       <div className="docs-overlay" />
 
